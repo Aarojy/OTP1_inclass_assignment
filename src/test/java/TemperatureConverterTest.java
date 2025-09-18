@@ -18,6 +18,18 @@ public class TemperatureConverterTest {
     }
 
     @Test
+    void kelvinToCelsius() {
+        assertEquals(-273.15, converter.kelvinToCelsius(0), 0.01);
+        assertEquals(0, converter.kelvinToCelsius(273.15), 0.01);
+    }
+
+    @Test
+    void celsiusToKelvin() {
+        assertEquals(273.15, converter.celsiusToKelvin(0), 0.01);
+        assertEquals(373.15, converter.celsiusToKelvin(100), 0.01);
+    }
+
+    @Test
     void isExtremeTemperature() {
         assertTrue(converter.isExtremeTemperature(-50));
         assertTrue(converter.isExtremeTemperature(60));
